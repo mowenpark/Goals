@@ -5,6 +5,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= current_user.username if logged_in? %>
+  <!-- <%= button_to "Sign In", new_session_url, method: :get unless logged_in? %> -->
+  <%= button_to "Sign Out", session_url, method: :delete if logged_in? %>
+  <%= flash[:errors].join("<br>").html_safe if flash[:errors] %>
+
 </head>
 <body>
 

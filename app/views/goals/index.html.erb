@@ -1,0 +1,7 @@
+Goals
+<% if current_user %>
+  <% current_user.goals.each do |goal| %>
+    <%= link_to goal.title, goal_url(goal) %>
+    <br>
+  <% end %>
+<% end %>

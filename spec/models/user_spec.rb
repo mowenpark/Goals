@@ -15,10 +15,12 @@ RSpec.describe User, type: :model do
     should validate_presence_of(:password_digest)
   end
   it "validate presence of session_token" do
-   should validate_presence_of(:session_token)
- end
- it "validate length of password" do
-  should validate_length_of(:password).is_at_least(6)
-end
+    should validate_presence_of(:session_token)
+  end
+  it "validate length of password" do
+    should validate_length_of(:password).is_at_least(6)
+  end
+
+
 
 end
