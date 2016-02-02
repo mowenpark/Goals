@@ -16,7 +16,7 @@ feature "the signup process" do
       expect(page).to have_content('Testing_username')
     end
     it "redirects to goals index" do
-      expect(page).to have_content("Goals")
+      expect(current_path).to eql("/goals") #(current_path).to equal()
     end
   end
   feature "Failing to sign up" do

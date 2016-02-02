@@ -44,7 +44,10 @@ class GoalsController < ApplicationController
 
   def update
     @goal = Goal.find(params[:id])
-    if @goal.update(goal_params)
+    @goal.completed = (goal_params[:completed] == 'yes') ? true : false
+    @goal.is_public = (goal_params[:is_public] == 'yes') ? true : false
+    # fail
+    if @goal.update(goal_params.permit(:title))
       redirect_to goal_url(@goal)
     else
       flash.now[:errors] = @goal.errors.full_messages
@@ -54,7 +57,7 @@ class GoalsController < ApplicationController
 
 private
 def goal_params
-  params.require(:goal).permit(:title, :is_public)
+  params.require(:goal).permit(:title, :is_public, :completed)
 end
 
 end

@@ -3,3 +3,6 @@
 <%= @goal.is_public ? "Public" : "Private" %>
 <br>
 <%= @goal.completed ? "Done" : "Working on it!" %>
+<br>
+<br>
+<%= button_to "Edit", edit_goal_url(@goal), method: :get %>
