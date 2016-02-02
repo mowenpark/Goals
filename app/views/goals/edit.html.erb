@@ -14,8 +14,8 @@ Edit
   <input type="radio" name="goal[completed]" value='yes' id='completed' <%= 'checked' if @goal.completed == true %> >Yes
   <input type="radio" name="goal[completed]" value='no' id='completed' <%= 'checked' if @goal.completed == false %> >No
   <br>
-  <%= radio_button("user", "receive_newsletter", 1) %>Yes
-  <%= radio_button("user", "receive_newsletter", 0) %>No
+  <!-- <%= radio_button("user", "receive_newsletter", 1) %>Yes
+  <%= radio_button("user", "receive_newsletter", 0) %>No -->
   <br>
   <input type="submit" value="Submit Edit">
 </form>
